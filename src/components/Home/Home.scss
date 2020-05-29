@@ -4,11 +4,14 @@
 }
 
 .link {
-  color: #61dafb;
+  color: white;
+  text-decoration: none;
 }
 
 .header {
-  background-color: #282c34;
+  background: url('../../devwork.jpg') no-repeat;
+  background-size: cover;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;

@@ -1,20 +1,15 @@
 import React from 'react';
+import { Button } from '@material-ui/core';
 
 import logo from '../../logo.svg';
-import './Home.scss';
+import styles from './Home.scss';
 
 const Home = () => (
-  <header className="header">
-    <p>AYMERIC TOULOUSE</p>
-    <img src={logo} className="logo" alt="logo" />
-    <a
-      className="link"
-      href="https://reactjs.org"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      React Developer
-    </a>
+  <header className={styles.header}>
+    <img src={logo} className={styles.logo} alt="logo" />
+
+    {/*<Button color="primary">Hello World</Button>*/}
+
   </header>
 );
 
