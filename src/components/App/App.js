@@ -2,10 +2,10 @@ import React from 'react';
 
 import Home from '../Home';
 
-import './App.css';
+import './App.scss';
 
 const App = () => (
-  <div className="App">
+  <div className="app">
     <Home />
   </div>
 );
