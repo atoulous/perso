@@ -1,0 +1,57 @@
+.logoReact {
+  height: 100px;
+  pointer-events: none;
+}
+
+.logo {
+  height: 80px;
+  pointer-events: none;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logoReact {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  margin: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 1080px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.listItem {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}

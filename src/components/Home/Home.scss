@@ -32,25 +32,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 1080px;
+  margin: auto;
 }
 
 .card {
   margin: 20px;
+  margin-top: 25%;
   padding: 10px 20px;
-  width: 1080px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.logoContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%;
+.slider {
 }
 
-.listItem {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+.title {
+  padding-top: 250px;
+  color: white;
 }
