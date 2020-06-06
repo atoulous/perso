@@ -35,21 +35,22 @@
   width: 100%;
   max-width: 1080px;
   margin: auto;
-}
-
-.card {
-  margin: 20px;
-  margin-top: 25%;
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.slider {
+  height: 100vh;
+  justify-content: center;
 }
 
 .title {
-  padding-top: 250px;
   color: white;
+}
+
+.body {
+  color: white;
+  text-align: center;
+  font-size: 20px !important;
+}
+
+.avatar {
+  height: 200px !important;
+  width: 200px !important;
+  margin-bottom: 20px;
 }

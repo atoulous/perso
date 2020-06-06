@@ -1,11 +1,12 @@
-.logoReact {
-  height: 100px;
-  pointer-events: none;
-}
-
 .logo {
   height: 80px;
   pointer-events: none;
+}
+
+.logoMRT {
+  height: 40px;
+  pointer-events: none;
+  margin-bottom: 10px;
 }
 
 .link {
@@ -13,22 +14,7 @@
   text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .logoReact {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.skills {
+.work {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,16 +26,11 @@
 }
 
 .subSkills {
+  height: 130px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 250px;
-  height: 90%;
-}
-
-.dialogContent {
-  width: 550px;
-  height: 450px;
+  width: 150px;
 }
 
 .card {
@@ -72,8 +53,4 @@
 .listItem {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
-}
-
-.containContainer {
-  width: 100%;
 }

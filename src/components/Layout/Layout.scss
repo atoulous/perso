@@ -26,17 +26,31 @@
 .layout {
   min-height: 100vh;
   background-size: cover;
+  transition: background 1s ease;
 }
 
 .header {
+  position: fixed;
+  width: 100%;
+  max-width: 1080px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
 }
 
-.bottomNavigation {
-  background: transparent !important;
+.buttonGroup {
+  width: 100%;
+  justify-content: center;
 }
 
-.bottomNavigationAction {
+.buttonContainer {
+  text-decoration: none;
 }
 
-.switchContext {
+.button {
+  padding: 10px 40px !important;
+}
+
+.slider {
 }

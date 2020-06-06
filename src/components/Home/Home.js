@@ -1,75 +1,31 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import {
-  BottomNavigation, Card, FormControlLabel, Switch, Typography, Slider,
+  Typography, Card, Avatar,
 } from '@material-ui/core';
-
-import { ThemeContext } from '../../providers/ThemeContext';
-
 
 import styles from './Home.scss';
 
-const Home = () => {
-  const { backgroundIndex, setBackgroundIndex } = useContext(ThemeContext);
+const Home = () => (
+  <div className={styles.home} id={'home'}>
 
-  const handleSlider = (value) => {
-    setBackgroundIndex(value);
-  };
+    <Avatar alt="Aymeric Toulouse" src={'/moi.jpeg'} className={styles.avatar} />
 
-  const marks = [
-    {
-      value: 3,
-      label: '5am',
-    },
-    {
-      value: 4,
-      label: '6am',
-    },
-    {
-      value: 5,
-      label: '10am',
-    },
-    {
-      value: 6,
-      label: '4pm',
-    },
-    {
-      value: 7,
-      label: '8pm',
-    },
-    {
-      value: 8,
-      label: '9pm',
-    },
-    {
-      value: 9,
-      label: '10am',
-    },
-    {
-      value: 10,
-      label: '12am',
-    },
-  ];
+    <Typography gutterBottom variant="h2" component="h1" className={styles.title}>
+      Aymeric Toulouse - fullstack developer
+    </Typography>
 
-  return (
-    <div className={styles.home}>
+    <Typography gutterBottom variant="body1" component="p" className={styles.body}>
+      Welcome over here !
+      <br />
+      I'm a 27 yo french developer from 42 Paris (atoulous). Starting from scratch in 2015 with C and vim.
+      <br />
+      I love JavaScript ecosystem and build things with latest features of its languages.
+      <br />
+      I live both in Paris and Bordeaux. Depends of the weather ;)
+    </Typography>
 
-      <Slider
-        className={styles.slider}
-        defaultValue={backgroundIndex}
-        getAriaValueText={handleSlider}
-        step={1}
-        min={3}
-        max={10}
-        marks={marks}
-      />
-
-      <Typography gutterBottom variant="h2" component="h1" className={styles.title}>
-        Aymeric Toulouse - fullstack developer
-      </Typography>
-
-    </div>
-  );
-};
+  </div>
+);
 
 export default Home;
