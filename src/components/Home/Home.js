@@ -18,7 +18,9 @@ const Home = () => (
     <Typography gutterBottom variant="body1" component="p" className={styles.body}>
       Welcome over here !
       <br />
-      I'm a 27 yo french developer from 42 Paris (atoulous). Starting from scratch in 2015 with C and vim.
+      I'm a 27 yo french developer from 42 Paris (atoulous).
+      <br />
+      Started from scratch in 2015 with C and vim.
       <br />
       I love JavaScript ecosystem and build things with latest features of its languages.
       <br />

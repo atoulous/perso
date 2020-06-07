@@ -1,9 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 
 import {
   Card,
-  FormControlLabel,
-  Switch,
+  Chip,
   Dialog,
   DialogActions,
   DialogTitle,
@@ -23,17 +22,10 @@ import {
 import reactlogo from '../../logos/reactlogo.svg';
 import nodejslogo from '../../logos/nodejslogo.svg';
 import baglogo from '../../logos/bag.svg';
-import { ThemeContext } from '../../providers/ThemeContext';
 
 import styles from './Skills.scss';
 
 const Skills = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
-
-  const handleSwitchTheme = (event) => {
-    setTheme(event.target.checked ? 'dark' : 'default');
-  };
-
   const [dialogSettings, setDialogSettings] = useState({ dialogOpen: false, dialogContent: null });
   const { dialogOpen, dialogContent } = dialogSettings;
 
@@ -68,19 +60,30 @@ const Skills = () => {
       'Logs',
       'Eslint airbnb best practices',
     ],
-    othersList: [
+    othersLangList: [
       'C',
-      'bash',
+      'bash/zsh',
       'PHP',
       'Python',
       'Swift',
       'React Native',
       'AngularJS',
     ],
+    othersList: [
+      'DevOps',
+      'Docker',
+      'Monitoring',
+      'Code Review',
+      'Unit test',
+      'Git',
+      'Agile/Scrum',
+    ],
   };
 
   return (
     <div className={styles.skills} id={'skills'}>
+      <h2 className={styles.subTitle}>Skills</h2>
+
       <Dialog
         open={dialogOpen}
         onEscapeKeyDown={handleToggleDialog}
@@ -109,7 +112,6 @@ const Skills = () => {
         </DialogActions>
       </Dialog>
 
-
       <Card className={styles.card}>
         <div className={styles.logoContainer}>
           <img src={reactlogo} className={styles.logoReact} alt="reactlogo" />
@@ -121,7 +123,8 @@ const Skills = () => {
 
         <div className={styles.containContainer}>
           <p>My favorite front framework is ReactJS.</p>
-          <p>I keep my work up to date with best practices and latest features.</p>
+          <p>I keep my works up to date with best practices and latest features.</p>
+          <p>I'm almost maniac and I care about my code style</p>
           <p>I spent so many hours creating custom webpack configurations !</p>
           <Button
             startIcon={<Check />}
@@ -130,17 +133,6 @@ const Skills = () => {
           >
             Details
           </Button>
-
-          {/* <FormControlLabel */}
-          {/*  control={( */}
-          {/*    <Switch */}
-          {/*      checked={theme === 'dark'} */}
-          {/*      onChange={handleSwitchTheme} */}
-          {/*    /> */}
-          {/*  )} */}
-          {/*  label="Use Context API" */}
-          {/*  className={styles.switchContext} */}
-          {/* /> */}
         </div>
       </Card>
 
@@ -154,7 +146,7 @@ const Skills = () => {
 
         <div className={styles.containContainer}>
           <p>As a javascript dev, I mainly build my apis with NodeJS and Express.</p>
-          <p>I like to create clean restfull API for microservice architecture or optimize complex monolythics.</p>
+          <p>I like to create clean restfull API for microservice architecture or optimize complex monolythic.</p>
           <p>I know principles such as event loop/parallelism to understand thread cycle and boost performance.</p>
           <Button
             startIcon={<Check />}
@@ -175,18 +167,21 @@ const Skills = () => {
         </div>
 
         <div className={styles.containContainer}>
-          <p>From beginning to now, i have used many other languages and Framework</p>
-
-          <Button
-            startIcon={<Check />}
-            onClick={() => handleToggleDialog('othersList')}
-            color={'secondary'}
-          >
-            Details
-          </Button>
+          <p>From beginning to now, i have used many other languages and Framework for various projects like:</p>
+          {
+            lists.othersLangList.map((elem) => (
+              <Chip label={elem} className={styles.chip} />
+            ))
+          }
+          <p>I work daily with these essential points:</p>
+          {
+            lists.othersList.map((elem) => (
+              <Chip label={elem} className={styles.chip} />
+            ))
+          }
+          <p>Also, I currently work on mac with terminal/vim and my favorite IDE is jetbrains Intellij IDEA.</p>
         </div>
       </Card>
-
     </div>
   );
 };

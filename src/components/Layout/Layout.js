@@ -5,10 +5,10 @@ import cc from 'classnames';
 import { HashLink } from 'react-router-hash-link';
 
 import {
-   ThemeProvider, Slider, ButtonGroup, Button,
+  ThemeProvider, Slider, ButtonGroup, Button,
 } from '@material-ui/core';
 import {
-  Grade, Work as WorkIcon, Person, Home as HomeIcon,
+  Grade, Work as WorkIcon, Person, Home as HomeIcon, Devices
 } from '@material-ui/icons';
 
 import { darkTheme, defaultTheme } from '../../themes';
@@ -16,7 +16,8 @@ import { ThemeContext } from '../../providers/ThemeContext';
 
 import Home from '../Home';
 import Skills from '../Skills';
-import Work from '../Work';
+import Works from '../Works';
+import Refs from '../Refs';
 import Contact from '../Contact';
 
 import styles from './Layout.scss';
@@ -83,8 +84,11 @@ const Layout = ({ children, history }) => {
             <HashLink to={'#skills'} className={styles.buttonContainer}>
               <Button startIcon={<Grade />} className={styles.button}>Skills</Button>
             </HashLink>
-            <HashLink to={'#work'} className={styles.buttonContainer}>
-              <Button startIcon={<WorkIcon />} className={styles.button}>Work</Button>
+            <HashLink to={'#works'} className={styles.buttonContainer}>
+              <Button startIcon={<Devices />} className={styles.button}>Works</Button>
+            </HashLink>
+            <HashLink to={'#refs'} className={styles.buttonContainer}>
+              <Button startIcon={<WorkIcon />} className={styles.button}>Refs</Button>
             </HashLink>
             <HashLink to={'#contact'} className={styles.buttonContainer}>
               <Button startIcon={<Person />} className={styles.button}>Contact</Button>
@@ -104,7 +108,8 @@ const Layout = ({ children, history }) => {
 
         <Home />
         <Skills />
-        <Work />
+        <Works />
+        <Refs />
         <Contact />
 
         <footer />

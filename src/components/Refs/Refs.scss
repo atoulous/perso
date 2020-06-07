@@ -1,20 +1,26 @@
 .logo {
-  height: 80px;
+  height: 40px;
   pointer-events: none;
 }
 
-.logoMRT {
-  height: 40px;
-  pointer-events: none;
-  margin-bottom: 10px;
+.logoMrt {
+  height: 100px;
+}
+
+.logoMps {
+  height: 50px;
 }
 
 .link {
   color: white;
   text-decoration: none;
+  padding: 10px;
+  &:hover {
+    background-color: rgb(73, 73, 73);
+  }
 }
 
-.work {
+.works {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +56,40 @@
   width: 30%;
 }
 
+.containContainer {
+  width: 100%;
+}
+
 .listItem {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+}
+
+.subTitle {
+  color: white;
+  font-size: 40px;
+}
+
+.dialogContent {
+  width: 550px;
+  height: 600px;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1080px;
+  margin: auto;
+  height: 100vh;
+  justify-content: center;
+}
+
+.subSkills {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 250px;
+  height: 90%;
 }

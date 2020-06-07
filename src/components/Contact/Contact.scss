@@ -2,22 +2,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 1080px;
   margin: auto;
   height: 100vh;
   justify-content: center;
 }
 
-.card {
-  margin: 20px;
-  margin-top: 25%;
-  padding: 10px 20px;
+.avatarsContainer {
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
 
 .title {
   color: white;
+}
+
+.subTitle {
+  color: white;
+  font-size: 40px;
+}
+
+.link {
+
+}
+
+.avatar {
+  width: 100px !important;
+  height: 100px !important;
+  background: rgb(229, 229, 229) !important;
+  margin: 20px;
+
+  &:hover {
+    background: white !important;
+  }
+}
+
+.icon {
+  font-size: 2em !important;
 }
