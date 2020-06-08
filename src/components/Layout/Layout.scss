@@ -54,3 +54,23 @@
 
 .slider {
 }
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.avatar {
+  width: 50px !important;
+  height: 50px !important;
+  background: rgb(229, 229, 229) !important;
+  cursor: pointer;
+  &:hover {
+    background: white !important;
+  }
+}
+
+.icon {
+  font-size: 3em !important;
+}

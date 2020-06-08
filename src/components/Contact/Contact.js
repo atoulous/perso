@@ -1,9 +1,6 @@
 import React from 'react';
 
-import {
-  Typography,
-  Avatar,
-} from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
 import { LinkedIn, GitHub, Mail, Twitter } from '@material-ui/icons';
 
 import styles from './Contact.scss';

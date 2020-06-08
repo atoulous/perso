@@ -170,13 +170,13 @@ const Skills = () => {
           <p>From beginning to now, i have used many other languages and Framework for various projects like:</p>
           {
             lists.othersLangList.map((elem) => (
-              <Chip label={elem} className={styles.chip} />
+              <Chip label={elem} key={elem} className={styles.chip} />
             ))
           }
           <p>I work daily with these essential points:</p>
           {
             lists.othersList.map((elem) => (
-              <Chip label={elem} className={styles.chip} />
+              <Chip label={elem} key={elem} className={styles.chip} />
             ))
           }
           <p>Also, I currently work on mac with terminal/vim and my favorite IDE is jetbrains Intellij IDEA.</p>

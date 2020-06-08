@@ -1,37 +1,25 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React, { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import cc from 'classnames';
-import { HashLink } from 'react-router-hash-link';
+import { Link as LinkScroll } from 'react-scroll';
 
 import {
-  ThemeProvider, Slider, ButtonGroup, Button,
+  ThemeProvider, Slider, ButtonGroup, Button, Avatar,
 } from '@material-ui/core';
 import {
-  Grade, Work as WorkIcon, Person, Home as HomeIcon, Devices
+  Grade, Work as WorkIcon, Person, Home as HomeIcon, Devices, ArrowDropUp,
 } from '@material-ui/icons';
 
 import { darkTheme, defaultTheme } from '../../themes';
 import { ThemeContext } from '../../providers/ThemeContext';
 
-import Home from '../Home';
-import Skills from '../Skills';
-import Works from '../Works';
-import Refs from '../Refs';
-import Contact from '../Contact';
-
 import styles from './Layout.scss';
 
-
-const Layout = ({ children, history }) => {
-  const { theme, setTheme, backgroundIndex, setBackgroundIndex } = useContext(ThemeContext);
-  const [value, setValue] = useState(0);
+const Layout = ({ children }) => {
+  const { theme, backgroundIndex, setBackgroundIndex } = useContext(ThemeContext);
 
   const themeObj = useMemo(() => (theme === 'dark' ? darkTheme() : defaultTheme()), [theme]);
-
-  const handleGo = (path) => {
-    // history.push(path);
-  };
 
   const handleSlider = (index) => {
     setBackgroundIndex(index);
@@ -78,21 +66,21 @@ const Layout = ({ children, history }) => {
         <header className={styles.header}>
 
           <ButtonGroup variant="text" className={styles.buttonGroup}>
-            <HashLink to={'#home'} className={styles.buttonContainer}>
+            <LinkScroll to={'home'} smooth className={styles.buttonContainer}>
               <Button startIcon={<HomeIcon />} className={styles.button}>Home</Button>
-            </HashLink>
-            <HashLink to={'#skills'} className={styles.buttonContainer}>
+            </LinkScroll>
+            <LinkScroll to={'skills'} smooth className={styles.buttonContainer}>
               <Button startIcon={<Grade />} className={styles.button}>Skills</Button>
-            </HashLink>
-            <HashLink to={'#works'} className={styles.buttonContainer}>
+            </LinkScroll>
+            <LinkScroll to={'works'} smooth className={styles.buttonContainer}>
               <Button startIcon={<Devices />} className={styles.button}>Works</Button>
-            </HashLink>
-            <HashLink to={'#refs'} className={styles.buttonContainer}>
+            </LinkScroll>
+            <LinkScroll to={'refs'} smooth className={styles.buttonContainer}>
               <Button startIcon={<WorkIcon />} className={styles.button}>Refs</Button>
-            </HashLink>
-            <HashLink to={'#contact'} className={styles.buttonContainer}>
+            </LinkScroll>
+            <LinkScroll to={'contact'} smooth className={styles.buttonContainer}>
               <Button startIcon={<Person />} className={styles.button}>Contact</Button>
-            </HashLink>
+            </LinkScroll>
           </ButtonGroup>
 
           <Slider
@@ -105,14 +93,14 @@ const Layout = ({ children, history }) => {
             marks={marks}
           />
         </header>
-
-        <Home />
-        <Skills />
-        <Works />
-        <Refs />
-        <Contact />
-
-        <footer />
+        { children }
+        <footer className={styles.footer}>
+          <LinkScroll to={'home'} smooth>
+            <Avatar className={styles.avatar}>
+              <ArrowDropUp className={styles.icon} />
+            </Avatar>
+          </LinkScroll>
+        </footer>
       </div>
     </ThemeProvider>
   );
