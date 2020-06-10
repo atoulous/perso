@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const ThemeContext = createContext();
 
@@ -11,6 +12,10 @@ export const ThemeContextProvider = ({ children }) => {
       { children }
     </ThemeContext.Provider>
   );
+};
+
+ThemeContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export const ThemeContextConsumer = ThemeContext.Consumer;

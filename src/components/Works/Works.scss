@@ -1,16 +1,3 @@
-.logo {
-  height: 40px;
-  pointer-events: none;
-}
-
-.logoMrt {
-  height: 100px;
-}
-
-.logoMps {
-  height: 50px;
-}
-
 .link {
   color: white;
   text-decoration: none;
@@ -23,7 +10,13 @@
   width: 100%;
   max-width: 1080px;
   margin: auto;
-  height: 100vh;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.worksCard {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -36,24 +29,28 @@
 }
 
 .card {
-  margin: 20px;
-  padding: 10px 20px;
-  width: 100%;
-  max-width: 1080px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.logoContainer {
+  margin: 10px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
+
+  &:hover {
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+  }
+}
+
+.imgContainer {
+}
+
+.img {
+  height: 200px;
+  width: 250px;
+  pointer-events: none;
 }
 
 .containContainer {
-  width: 100%;
+  padding: 10px 20px
 }
 
 .listItem {
@@ -68,7 +65,7 @@
 
 .dialogContent {
   width: 550px;
-  height: 600px;
+  height: 100%;
 }
 
 .skills {
@@ -86,6 +83,15 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 250px;
-  height: 90%;
+  width: 150px;
+  height: 30vh;
+}
+
+.contentModal {
+  display: flex;
+  flex-direction: column;
+}
+
+.contentModalList {
+  width: fit-content;
 }
