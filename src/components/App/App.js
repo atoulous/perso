@@ -14,7 +14,7 @@ const App = () => (
     <Switch>
       <AppProvider>
         <Layout>
-          <Route component={Home} />
+          <Route path={'/'} component={Home} />
           <Route component={Skills} />
           <Route component={Works} />
           <Route component={Refs} />
