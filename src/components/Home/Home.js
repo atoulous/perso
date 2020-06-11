@@ -1,15 +1,17 @@
 import React from 'react';
 
 import {
-  Typography, Card, Avatar,
+  Typography, Avatar,
 } from '@material-ui/core';
 
 import styles from './Home.scss';
 
+import me from '../../images/moi.jpeg';
+
 const Home = () => (
   <div className={styles.home} id={'home'}>
 
-    <Avatar alt="Aymeric Toulouse" src={'/moi.jpeg'} className={styles.avatar} />
+    <Avatar alt="Aymeric Toulouse" src={me} className={styles.avatar} />
 
     <Typography gutterBottom variant="h2" component="h1" className={styles.title}>
       Aymeric Toulouse - fullstack developer
