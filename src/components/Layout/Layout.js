@@ -1,6 +1,5 @@
 import React, { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 import cc from 'classnames';
 import { Link as LinkScroll } from 'react-scroll';
 
@@ -110,4 +109,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default withRouter(Layout);
+export default Layout;

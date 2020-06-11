@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import AppProvider from '../../providers';
 import Layout from '../Layout';
@@ -10,19 +9,15 @@ import Refs from '../Refs';
 import Contact from '../Contact';
 
 const App = () => (
-  <Router>
-    <Switch>
-      <AppProvider>
-        <Layout>
-          <Route path={'/'} component={Home} />
-          <Route component={Skills} />
-          <Route component={Works} />
-          <Route component={Refs} />
-          <Route component={Contact} />
-        </Layout>
-      </AppProvider>
-    </Switch>
-  </Router>
+  <AppProvider>
+    <Layout>
+      <Home />
+      <Skills />
+      <Works />
+      <Refs />
+      <Contact />
+    </Layout>
+  </AppProvider>
 );
 
 export default App;

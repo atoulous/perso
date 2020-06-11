@@ -113,7 +113,6 @@ const Works = () => {
       <ListItem button className={styles.listItem}><ListItemText primary={'material-ui'} /></ListItem>
       <ListItem button className={styles.listItem}><ListItemText primary={'eslint'} /></ListItem>
       <ListItem button className={styles.listItem}><ListItemText primary={'sass'} /></ListItem>
-      <ListItem button className={styles.listItem}><ListItemText primary={'react-router'} /></ListItem>
       <ListItem button className={styles.listItem}><ListItemText primary={'react-scroll'} /></ListItem>
     </List>
   </div>,
