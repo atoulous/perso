@@ -84,7 +84,10 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={themeObj}>
-      <img src={bgs[backgroundIndex]} className={styles.background} alt="bg" />
+      {
+        bgs.map((bg, index) => bg &&
+          <img src={bg} className={cc(styles.background, backgroundIndex !== index && styles.bgHidden)} alt="bg" />)
+      }
       <div className={cc(styles.layout)}>
         <header className={styles.header}>
           <ButtonGroup variant="text" className={styles.buttonGroup}>

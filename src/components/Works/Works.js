@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 
 import {
   Button,
@@ -178,7 +178,7 @@ const Works = () => {
   </div>,
     hypertubeList:
   <div>
-    <p>Hypertupe 42's project</p>
+    <p>Hypertupe 42 project</p>
     <p>Streaming platform</p>
     <List className={styles.contentModalList}>
       <ListItem
@@ -195,7 +195,7 @@ const Works = () => {
   </div>,
     matchaList:
   <div>
-    <p>Matcha 42's project</p>
+    <p>Matcha 42 project</p>
     <p>Match dating app (tinder like) made with React and Express</p>
     <List className={styles.contentModalList}>
       <ListItem
@@ -212,7 +212,7 @@ const Works = () => {
   </div>,
     redtetrisList:
   <div>
-    <p>Red Tetris 42's project</p>
+    <p>Red Tetris 42 project</p>
     <p>Multiplayer Networking tetris made with React/Redux and Express</p>
     <List className={styles.contentModalList}>
       <ListItem
@@ -229,7 +229,7 @@ const Works = () => {
   </div>,
     rtList:
   <div>
-    <p>Ray Tracing 42's project</p>
+    <p>Ray Tracing 42 project</p>
     <p>computer graphics rendering technique for generating an image</p>
     <p>software conception in C</p>
     <img src={rt2} alt="rt2" className={styles.img} />
@@ -249,7 +249,7 @@ const Works = () => {
   </div>,
     wolfList:
   <div>
-    <p>Wolf3d 42's project - RayCasting</p>
+    <p>Wolf3d 42 project - RayCasting</p>
     <p>recall counter-strike 1.6 in C with ray casting math method</p>
     <img src={raycasting} alt="raycasting" className={styles.img} />
     <List className={styles.contentModalList}>
@@ -341,9 +341,9 @@ const Works = () => {
         </Card>
 
         <Card className={styles.card}>
-          <img src={redtetris} className={styles.img} />
+          <img src={redtetris} alt="redtetris" className={styles.img} />
           <div className={styles.containContainer}>
-            <h4>Red Tetris</h4>
+            <h4>Red Tetris - web</h4>
             <Button
               startIcon={<Check />}
               onClick={() => handleToggleDialog('redtetrisList')}
@@ -356,7 +356,7 @@ const Works = () => {
         <Card className={styles.card}>
           <img src={hypertube} alt="hypertube" className={styles.img} />
           <div className={styles.containContainer}>
-            <h4>Hypertube</h4>
+            <h4>Hypertube - web</h4>
             <Button
               startIcon={<Check />}
               onClick={() => handleToggleDialog('hypertubeList')}
@@ -369,7 +369,7 @@ const Works = () => {
         <Card className={styles.card}>
           <img src={matcha} alt="matcha" className={styles.img} />
           <div className={styles.containContainer}>
-            <h4>Matcha</h4>
+            <h4>Matcha - web</h4>
             <Button
               startIcon={<Check />}
               onClick={() => handleToggleDialog('matchaList')}
@@ -382,7 +382,7 @@ const Works = () => {
         <Card className={styles.card}>
           <img src={rt1} alt="rt1" className={styles.img} />
           <div className={styles.containContainer}>
-            <h4>Ray Traceur </h4>
+            <h4>Ray Traceur - infography</h4>
             <Button
               startIcon={<Check />}
               onClick={() => handleToggleDialog('rtList')}
@@ -395,7 +395,7 @@ const Works = () => {
         <Card className={styles.card}>
           <img src={wolf3d} alt="wolf3d" className={styles.img} />
           <div className={styles.containContainer}>
-            <h4>wolf3d</h4>
+            <h4>wolf3d - infography</h4>
             <Button
               startIcon={<Check />}
               onClick={() => handleToggleDialog('wolfList')}

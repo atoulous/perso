@@ -7,7 +7,8 @@
     "react/jsx-filename-extension": 0,
     "object-curly-newline": 0,
     "react/jsx-curly-brace-presence": 0,
-    "max-len": ["error", { "code": 120 }]
+    "max-len": ["error", { "code": 120 }],
+    "operator-linebreak": 0
   },
   "env": {
     "browser": true
