@@ -15,6 +15,29 @@ import { ThemeContext } from '../../providers/ThemeContext';
 
 import styles from './Layout.scss';
 
+import CatalinaDay3 from '../../images/CatalinaDay3.png';
+import CatalinaDay4 from '../../images/CatalinaDay4.png';
+import CatalinaDay5 from '../../images/CatalinaDay5.png';
+import CatalinaDay6 from '../../images/CatalinaDay6.png';
+import CatalinaDay7 from '../../images/CatalinaDay7.png';
+import CatalinaDay8 from '../../images/CatalinaDay8.png';
+import CatalinaDay9 from '../../images/CatalinaDay9.png';
+import CatalinaDay10 from '../../images/CatalinaDay10.png';
+
+const bgs = [
+  null,
+  null,
+  null,
+  CatalinaDay3,
+  CatalinaDay4,
+  CatalinaDay5,
+  CatalinaDay6,
+  CatalinaDay7,
+  CatalinaDay8,
+  CatalinaDay9,
+  CatalinaDay10,
+];
+
 const Layout = ({ children }) => {
   const { theme, backgroundIndex, setBackgroundIndex } = useContext(ThemeContext);
 
@@ -61,9 +84,9 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={themeObj}>
-      <div className={cc(styles[`background${backgroundIndex}`], styles.layout)}>
+      <img src={bgs[backgroundIndex]} className={styles.background} alt="bg" />
+      <div className={cc(styles.layout)}>
         <header className={styles.header}>
-
           <ButtonGroup variant="text" className={styles.buttonGroup}>
             <LinkScroll to={'home'} smooth className={styles.buttonContainer}>
               <Button startIcon={<HomeIcon />} className={styles.button}>Home</Button>
