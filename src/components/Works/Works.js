@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import cc from 'classnames';
 
 import {
   Button,
@@ -8,6 +9,7 @@ import {
   DialogContent,
   DialogTitle,
   ListItemIcon,
+  useMediaQuery,
 } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -267,8 +269,10 @@ const Works = () => {
   </div>,
   };
 
+  const matchWidth = useMediaQuery('(min-width:650px)');
+
   return (
-    <div className={styles.works} id={'works'}>
+    <div className={cc(styles.works, !matchWidth && styles.worksMobile)} id={'works'}>
       <h2 className={styles.subTitle}>Works</h2>
 
       <Dialog

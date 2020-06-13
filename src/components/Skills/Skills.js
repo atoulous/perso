@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import cc from 'classnames';
 
 import {
   Card,
@@ -8,11 +9,12 @@ import {
   DialogTitle,
   DialogContent,
   Button,
-  Typography,
   List,
   ListItem,
   ListItemText,
   Checkbox,
+  Box,
+  useMediaQuery,
 } from '@material-ui/core';
 
 import {
@@ -74,14 +76,15 @@ const Skills = () => {
       'Docker',
       'Monitoring',
       'Code Review',
-      'Unit test',
       'Git',
       'Agile/Scrum',
     ],
   };
 
+  const matchWidth = useMediaQuery('(min-width:650px)');
+
   return (
-    <div className={styles.skills} id={'skills'}>
+    <Box color={'text.primary'} className={cc(styles.skills, !matchWidth && styles.skillsMobile)} id={'skills'}>
       <h2 className={styles.subTitle}>Skills</h2>
 
       <Dialog
@@ -115,17 +118,22 @@ const Skills = () => {
       <Card className={styles.card}>
         <div className={styles.logoContainer}>
           <img src={reactlogo} className={styles.logoReact} alt="reactlogo" />
-          <Typography gutterBottom variant="h5" component="h2">
-            main ReactJS
-          </Typography>
-
+          {
+            matchWidth && <h3>main ReactJS</h3>
+          }
         </div>
 
         <div className={styles.containContainer}>
-          <p>My favorite front framework is ReactJS.</p>
-          <p>I keep my works up to date with best practices and latest features.</p>
-          <p>I'm almost maniac and I care about my code style</p>
-          <p>I spent so many hours creating custom webpack configurations !</p>
+          <p>
+            My favorite front framework is ReactJS.
+            <br />
+            I keep my works up to date with best practices and latest features.
+            <br />
+            I'm almost maniac and I care about my code style.
+            <br />
+            I spent so many hours creating custom webpack configurations !
+            <br />
+          </p>
           <Button
             startIcon={<Check />}
             onClick={() => handleToggleDialog('reactList')}
@@ -139,15 +147,20 @@ const Skills = () => {
       <Card className={styles.card}>
         <div className={styles.logoContainer}>
           <img src={nodejslogo} className={styles.logo} alt="nodejslogo" />
-          <Typography gutterBottom variant="h5" component="h2">
-            main NodeJS
-          </Typography>
+          {
+            matchWidth && <h3>main NodeJS</h3>
+          }
         </div>
 
         <div className={styles.containContainer}>
-          <p>As a javascript dev, I mainly build my apis with NodeJS and Express.</p>
-          <p>I like to create clean restfull API for microservice architecture or optimize complex monolythic.</p>
-          <p>I know principles such as event loop/parallelism to understand thread cycle and boost performance.</p>
+          <p>
+            As a javascript dev, I mainly build my apis with NodeJS and Express.
+            <br />
+            I like to create clean restfull API for microservice architecture or optimize complex monolythic.
+            <br />
+            I know principles such as event loop/parallelism to understand thread cycle and boost performance.
+            <br />
+          </p>
           <Button
             startIcon={<Check />}
             onClick={() => handleToggleDialog('nodeList')}
@@ -161,9 +174,9 @@ const Skills = () => {
       <Card className={styles.card}>
         <div className={styles.logoContainer}>
           <img src={baglogo} className={styles.logo} alt="baglogo" />
-          <Typography gutterBottom variant="h5" component="h2">
-            others
-          </Typography>
+          {
+            matchWidth && <h3>bagpack</h3>
+          }
         </div>
 
         <div className={styles.containContainer}>
@@ -179,10 +192,9 @@ const Skills = () => {
               <Chip label={elem} key={elem} className={styles.chip} />
             ))
           }
-          <p>Also, I currently work on mac with terminal/vim and my favorite IDE is jetbrains Intellij IDEA.</p>
         </div>
       </Card>
-    </div>
+    </Box>
   );
 };
 

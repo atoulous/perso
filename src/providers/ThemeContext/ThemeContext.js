@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 export const ThemeContext = createContext();
 
 export const ThemeContextProvider = ({ children }) => {
+  const date = new Date();
+  const currentHour = date.getHours();
   const [theme, setTheme] = useState('dark');
-  const [backgroundIndex, setBackgroundIndex] = useState(3);
+  const [hour, setHour] = useState(currentHour);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, backgroundIndex, setBackgroundIndex }}>
+    <ThemeContext.Provider value={{ theme, setTheme, hour, setHour }}>
       { children }
     </ThemeContext.Provider>
   );

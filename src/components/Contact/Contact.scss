@@ -10,19 +10,18 @@
 .avatarsContainer {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .title {
-  color: white;
 }
 
 .subTitle {
-  color: white;
-  font-size: 40px;
+  font-size: 2em;
 }
 
 .link {
-
 }
 
 .avatar {

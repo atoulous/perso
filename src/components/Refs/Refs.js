@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
+import cc from 'classnames';
 
 import {
   Button,
@@ -7,8 +8,8 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-  FormControlLabel,
-  Switch,
+  Box,
+  useMediaQuery,
 } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -19,7 +20,6 @@ import { Check, Close } from '@material-ui/icons';
 import logoMRT from '../../logos/mrtlogowhite.png';
 import kaptenlogo from '../../logos/kaptenlogo.svg';
 import mpslogo from '../../logos/mpslogowhite.png';
-import { ThemeContext } from '../../providers/ThemeContext';
 
 import styles from './Refs.scss';
 
@@ -74,8 +74,10 @@ const Refs = () => {
     ],
   };
 
+  const matchWidth = useMediaQuery('(min-width:650px)');
+
   return (
-    <div className={styles.works} id={'refs'}>
+    <Box color={'text.primary'} className={cc(styles.refs, !matchWidth && styles.refsMobile)} id={'refs'}>
       <h2 className={styles.subTitle}>Refs</h2>
 
       <Dialog
@@ -110,7 +112,7 @@ const Refs = () => {
       <Card className={styles.card}>
         <div className={styles.logoContainer}>
           <a href={'https://monsieurtshirt.com'} target={'_blank'} rel="noreferrer" className={styles.link}>
-            <img src={logoMRT} className={styles.logoMrt} alt="logoMRT" />
+            <img src={logoMRT} className={matchWidth ? styles.logoMrt : styles.logoMrtMini} alt="logoMRT" />
           </a>
         </div>
 
@@ -120,7 +122,6 @@ const Refs = () => {
             Mars 2018 - summer 2020 | 2 ½ years | Paris - Bordeaux
             <br />
             <hr />
-
             Refonte du SI/ERP pour du custom (sites web + automatisation de l'atelier de production)
             <br />
             3 sites PWA, 1 backoffice, 1 app mobile, 1 app desktop, 1 app raspberry, 2 apis, 1 database
@@ -139,7 +140,7 @@ const Refs = () => {
       <Card className={styles.card}>
         <div className={styles.logoContainer}>
           <a href={'https://kapten.com'} target={'_blank'} rel="noreferrer" className={styles.link}>
-            <img src={kaptenlogo} className={styles.logo} alt="kaptenlogo" />
+            <img src={kaptenlogo} className={matchWidth ? styles.logo : styles.logoMini} alt="kaptenlogo" />
           </a>
         </div>
 
@@ -168,7 +169,7 @@ const Refs = () => {
       <Card className={styles.card}>
         <div className={styles.logoContainer}>
           <a href={'http://marineplaisanceservice.com'} target={'_blank'} rel="noreferrer" className={styles.link}>
-            <img src={mpslogo} className={styles.logoMps} alt="mpslogo" />
+            <img src={mpslogo} className={matchWidth ? styles.logoMps : styles.logoMpsMini} alt="mpslogo" />
           </a>
         </div>
 
@@ -179,14 +180,14 @@ const Refs = () => {
             <hr />
             Mécanique/Eléctricité/Stratification/Plomberie/Dépannage/Navigation/Manutention...
             <br />
-            Cette expérience très riche m'a permis d'apprendre a travailler avec mes mains, et à acquérir de la
-            débrouillardise qui m'aide encore au quotidien dans mon job de developpeur.<br/>
+            {`Cette expérience très riche m'a permis d'apprendre a travailler avec mes mains, et à acquérir de la
+            débrouillardise qui m'aide encore au quotidien dans mon job de developpeur.`}
+            <br />
             Il y a beaucoup de similitudes entre un débogage informatique et une recherche de panne moteur !
           </p>
         </div>
       </Card>
-
-    </div>
+    </Box>
   );
 };
 

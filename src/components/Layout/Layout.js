@@ -4,7 +4,7 @@ import cc from 'classnames';
 import { Link as LinkScroll } from 'react-scroll';
 
 import {
-  ThemeProvider, Slider, ButtonGroup, Button, Avatar,
+  ThemeProvider, ButtonGroup, Button, Avatar, useMediaQuery, Container,
 } from '@material-ui/core';
 import {
   Grade, Work as WorkIcon, Person, Home as HomeIcon, Devices, ArrowDropUp,
@@ -14,6 +14,8 @@ import { darkTheme, defaultTheme } from '../../themes';
 import { ThemeContext } from '../../providers/ThemeContext';
 
 import styles from './Layout.scss';
+
+import Slider, { findIndexFromHour } from './Slider';
 
 import CatalinaDay3 from '../../images/CatalinaDay3.png';
 import CatalinaDay4 from '../../images/CatalinaDay4.png';
@@ -25,9 +27,6 @@ import CatalinaDay9 from '../../images/CatalinaDay9.png';
 import CatalinaDay10 from '../../images/CatalinaDay10.png';
 
 const bgs = [
-  null,
-  null,
-  null,
   CatalinaDay3,
   CatalinaDay4,
   CatalinaDay5,
@@ -39,87 +38,47 @@ const bgs = [
 ];
 
 const Layout = ({ children }) => {
-  const { theme, backgroundIndex, setBackgroundIndex } = useContext(ThemeContext);
-
+  const { theme, hour, setHour } = useContext(ThemeContext);
   const themeObj = useMemo(() => (theme === 'dark' ? darkTheme() : defaultTheme()), [theme]);
-
-  const handleSlider = (index) => {
-    setBackgroundIndex(index);
-  };
-
-  const marks = [
-    {
-      value: 3,
-      label: '5am',
-    },
-    {
-      value: 4,
-      label: '6am',
-    },
-    {
-      value: 5,
-      label: '10am',
-    },
-    {
-      value: 6,
-      label: '4pm',
-    },
-    {
-      value: 7,
-      label: '8pm',
-    },
-    {
-      value: 8,
-      label: '9pm',
-    },
-    {
-      value: 9,
-      label: '10am',
-    },
-    {
-      value: 10,
-      label: '12am',
-    },
-  ];
+  const matchWidth = useMediaQuery('(min-width:650px)');
+  const bgIndex = findIndexFromHour(hour);
 
   return (
     <ThemeProvider theme={themeObj}>
       {
         bgs.map((bg, index) => bg &&
-          <img src={bg} className={cc(styles.background, backgroundIndex !== index && styles.bgHidden)} alt="bg" />)
+          <img src={bg} key={bg} className={cc(styles.background, bgIndex !== index && styles.bgHidden)} alt="bg" />)
       }
       <div className={cc(styles.layout)}>
         <header className={styles.header}>
           <ButtonGroup variant="text" className={styles.buttonGroup}>
-            <LinkScroll to={'home'} smooth className={styles.buttonContainer}>
-              <Button startIcon={<HomeIcon />} className={styles.button}>Home</Button>
+            <LinkScroll to={'home'} smooth>
+              <Button startIcon={matchWidth && <HomeIcon />} className={matchWidth && styles.button}>Home</Button>
             </LinkScroll>
-            <LinkScroll to={'skills'} smooth className={styles.buttonContainer}>
-              <Button startIcon={<Grade />} className={styles.button}>Skills</Button>
+            <LinkScroll to={'skills'} smooth>
+              <Button startIcon={matchWidth && <Grade />} className={matchWidth && styles.button}>Skills</Button>
             </LinkScroll>
-            <LinkScroll to={'works'} smooth className={styles.buttonContainer}>
-              <Button startIcon={<Devices />} className={styles.button}>Works</Button>
+            <LinkScroll to={'works'} smooth>
+              <Button startIcon={matchWidth && <Devices />} className={matchWidth && styles.button}>Works</Button>
             </LinkScroll>
-            <LinkScroll to={'refs'} smooth className={styles.buttonContainer}>
-              <Button startIcon={<WorkIcon />} className={styles.button}>Refs</Button>
+            <LinkScroll to={'refs'} smooth>
+              <Button startIcon={matchWidth && <WorkIcon />} className={matchWidth && styles.button}>Refs</Button>
             </LinkScroll>
-            <LinkScroll to={'contact'} smooth className={styles.buttonContainer}>
-              <Button startIcon={<Person />} className={styles.button}>Contact</Button>
+            <LinkScroll to={'contact'} smooth>
+              <Button startIcon={matchWidth && <Person />} className={matchWidth && styles.button}>Contact</Button>
             </LinkScroll>
           </ButtonGroup>
 
           <Slider
-            className={styles.slider}
-            defaultValue={backgroundIndex}
-            getAriaValueText={handleSlider}
-            step={1}
-            min={3}
-            max={10}
-            marks={marks}
+            hour={hour}
+            setHour={setHour}
           />
         </header>
-        { children }
+        <Container>
+          { children }
+        </Container>
         <footer className={styles.footer}>
+          <p>Good to know, I currently work on mac with terminal/vim and my favorite IDE is jetbrains Intellij IDEA.</p>
           <LinkScroll to={'home'} smooth>
             <Avatar className={styles.avatar}>
               <ArrowDropUp className={styles.icon} />

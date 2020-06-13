@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Avatar } from '@material-ui/core';
+import { Avatar, Box } from '@material-ui/core';
 import { LinkedIn, GitHub, Mail, Twitter } from '@material-ui/icons';
 
 import styles from './Contact.scss';
 
 const Contact = () => (
-  <div className={styles.contact} id={'contact'}>
+  <Box color={'text.primary'} className={styles.contact} id={'contact'}>
     <h2 className={styles.subTitle}>Contact</h2>
 
     <div className={styles.avatarsContainer}>
@@ -35,7 +35,7 @@ const Contact = () => (
       </a>
     </div>
 
-  </div>
+  </Box>
 );
 
 export default Contact;

@@ -1,5 +1,7 @@
 .layout {
   min-height: 100vh;
+  position: absolute;
+  width: 100%;
 }
 
 .background {
@@ -27,6 +29,9 @@
   right: 0;
   margin: auto;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .buttonGroup {
@@ -34,20 +39,24 @@
   justify-content: center;
 }
 
-.buttonContainer {
-}
-
 .button {
   padding: 10px 40px !important;
 }
 
 .slider {
+  width: 90% !important;
+}
+
+.childrenMobile {
+  padding: 15% 2% 0 2%;
 }
 
 .footer {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding: 20px;
+  color: white;
 }
 
 .avatar {
@@ -55,11 +64,12 @@
   height: 50px !important;
   background: rgb(229, 229, 229) !important;
   cursor: pointer;
+  margin: 5%;
   &:hover {
     background: white !important;
   }
 }
 
 .icon {
-  font-size: 3em !important;
+  font-size: 2em !important;
 }
