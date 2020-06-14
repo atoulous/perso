@@ -51,7 +51,7 @@ const Layout = ({ children }) => {
       }
       <div className={cc(styles.layout)}>
         <header className={styles.header}>
-          <ButtonGroup variant="text" className={styles.buttonGroup}>
+          <ButtonGroup variant="text" className={styles.buttonGroup} aria-label="text primary button group">
             <LinkScroll to={'home'} smooth>
               <Button startIcon={matchWidth && <HomeIcon />} className={matchWidth && styles.button}>Home</Button>
             </LinkScroll>

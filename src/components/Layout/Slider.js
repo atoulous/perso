@@ -128,6 +128,7 @@ const Slider = ({ hour, setHour }) => {
       min={1}
       max={24}
       marks={matchWidth && marks}
+      title={new Date().toString()}
     />
   );
 };
