@@ -41,7 +41,6 @@ const Works = () => {
   const lists = {
     persoList: [
       'ReactJS',
-      'AWS',
     ],
     mrtList: [
       'ReactJS',
@@ -115,8 +114,10 @@ const Works = () => {
       <ListItem button className={styles.listItem}><ListItemText primary={'material-ui'} /></ListItem>
       <ListItem button className={styles.listItem}><ListItemText primary={'eslint'} /></ListItem>
       <ListItem button className={styles.listItem}><ListItemText primary={'sass'} /></ListItem>
-      <ListItem button className={styles.listItem}><ListItemText primary={'react-scroll'} /></ListItem>
+      <ListItem button className={styles.listItem}><ListItemText primary={'heroku'} /></ListItem>
+      <ListItem button className={styles.listItem}><ListItemText primary={'aws'} /></ListItem>
     </List>
+    <span>Currently free hosted on Heroku, please apologize the sleeping dyno</span>
   </div>,
     mrtList:
   <div className={styles.contentModal}>
