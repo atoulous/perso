@@ -117,7 +117,7 @@ const Works = () => {
       <ListItem button className={styles.listItem}><ListItemText primary={'heroku'} /></ListItem>
       <ListItem button className={styles.listItem}><ListItemText primary={'aws'} /></ListItem>
     </List>
-    <span>Currently free hosted on Heroku, please apologize the sleeping dyno</span>
+    <span>Currently hosted on Heroku, please apologize HTTP/2 no support</span>
   </div>,
     mrtList:
   <div className={styles.contentModal}>
