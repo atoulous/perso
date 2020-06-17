@@ -17,24 +17,15 @@ import styles from './Layout.scss';
 
 import Slider, { findIndexFromHour } from './Slider';
 
-import CatalinaDay3 from '../../images/CatalinaDay3.png';
-import CatalinaDay4 from '../../images/CatalinaDay4.png';
-import CatalinaDay5 from '../../images/CatalinaDay5.png';
-import CatalinaDay6 from '../../images/CatalinaDay6.png';
-import CatalinaDay7 from '../../images/CatalinaDay7.png';
-import CatalinaDay8 from '../../images/CatalinaDay8.png';
-import CatalinaDay9 from '../../images/CatalinaDay9.png';
-import CatalinaDay10 from '../../images/CatalinaDay10.png';
-
 const bgs = [
-  CatalinaDay3,
-  CatalinaDay4,
-  CatalinaDay5,
-  CatalinaDay6,
-  CatalinaDay7,
-  CatalinaDay8,
-  CatalinaDay9,
-  CatalinaDay10,
+  'https://d2ypeajg1katov.cloudfront.net/images/CatalinaDay3.png',
+  'https://d2ypeajg1katov.cloudfront.net/images/CatalinaDay4.png',
+  'https://d2ypeajg1katov.cloudfront.net/images/CatalinaDay5.png',
+  'https://d2ypeajg1katov.cloudfront.net/images/CatalinaDay6.png',
+  'https://d2ypeajg1katov.cloudfront.net/images/CatalinaDay7.png',
+  'https://d2ypeajg1katov.cloudfront.net/images/CatalinaDay8.png',
+  'https://d2ypeajg1katov.cloudfront.net/images/CatalinaDay9.png',
+  'https://d2ypeajg1katov.cloudfront.net/images/CatalinaDay10.png',
 ];
 
 const Layout = ({ children }) => {

@@ -7,7 +7,7 @@ import {
 
 import styles from './Home.scss';
 
-import me from '../../images/moi.jpeg';
+const me = 'https://d2ypeajg1katov.cloudfront.net/images/moi.jpeg';
 
 const Home = () => {
   const matchWidth = useMediaQuery('(min-width:650px)');

@@ -16,19 +16,19 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Check, Close, Launch } from '@material-ui/icons';
 
-import sitepersoImg from '../../images/siteperso.png';
-import homemrt from '../../images/homemrt.png';
-import hypertube from '../../images/hypertube.png';
-import kapten from '../../images/kapten.png';
-import matcha from '../../images/matcha.png';
-import redtetris from '../../images/redtetris.png';
-import rt1 from '../../images/rt1.png';
-import rt2 from '../../images/rt2.png';
-import wolf3d from '../../images/wolf3d.png';
-import raycasting from '../../images/raycasting.gif';
-import raytracing from '../../images/raytracing.png';
-
 import styles from './Works.scss';
+
+const sitepersoImg = 'https://d2ypeajg1katov.cloudfront.net/images/siteperso.png';
+const homemrt = 'https://d2ypeajg1katov.cloudfront.net/images/homemrt.png';
+const hypertube = 'https://d2ypeajg1katov.cloudfront.net/images/hypertube.png';
+const kapten = 'https://d2ypeajg1katov.cloudfront.net/images/kapten.png';
+const matcha = 'https://d2ypeajg1katov.cloudfront.net/images/matcha.png';
+const redtetris = 'https://d2ypeajg1katov.cloudfront.net/images/redtetris.png';
+const rt1 = 'https://d2ypeajg1katov.cloudfront.net/images/rt1.png';
+const rt2 = 'https://d2ypeajg1katov.cloudfront.net/images/rt2.png';
+const wolf3d = 'https://d2ypeajg1katov.cloudfront.net/images/wolf3d.png';
+const raycasting = 'https://d2ypeajg1katov.cloudfront.net/images/raycasting.gif';
+const raytracing = 'https://d2ypeajg1katov.cloudfront.net/images/raytracing.png';
 
 const Works = () => {
   const [dialogSettings, setDialogSettings] = useState({ dialogOpen: false, dialogContent: null });
