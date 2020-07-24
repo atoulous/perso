@@ -41,6 +41,7 @@
 
 .button {
   padding: 10px 40px !important;
+  text-shadow: 1px 1px grey;
 }
 
 .slider {
@@ -72,4 +73,22 @@
 
 .icon {
   font-size: 2em !important;
+}
+
+.lazyBg {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: linear-gradient(to right, #224465 8%, #3d607d 18%, #224465 33%);
+}
+
+@keyframes placeHolderShimmer{
+  0%{
+    background-position: -400px 0
+  }
+  100%{
+    background-position: 1200px 0
+  }
 }

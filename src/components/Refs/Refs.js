@@ -15,7 +15,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
-import { Check, Close } from '@material-ui/icons';
+import { MoreHoriz, Close } from '@material-ui/icons';
 
 import logoMRT from '../../logos/mrtlogowhite.png';
 import kaptenlogo from '../../logos/kaptenlogo.svg';
@@ -128,9 +128,10 @@ const Refs = () => {
           </p>
 
           <Button
-            startIcon={<Check />}
+            startIcon={<MoreHoriz />}
             onClick={() => handleToggleDialog('mrtList')}
             color={'secondary'}
+            variant="contained"
           >
             More about job
           </Button>
@@ -157,9 +158,10 @@ const Refs = () => {
           </p>
 
           <Button
-            startIcon={<Check />}
+            startIcon={<MoreHoriz />}
             onClick={() => handleToggleDialog('kaptenList')}
             color={'secondary'}
+            variant="contained"
           >
             More about job
           </Button>

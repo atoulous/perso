@@ -18,7 +18,7 @@ import {
 } from '@material-ui/core';
 
 import {
-  Check, Close,
+  MoreHoriz, Close,
 } from '@material-ui/icons';
 
 import reactlogo from '../../logos/reactlogo.svg';
@@ -135,9 +135,10 @@ const Skills = () => {
             <br />
           </p>
           <Button
-            startIcon={<Check />}
+            startIcon={<MoreHoriz />}
             onClick={() => handleToggleDialog('reactList')}
             color={'secondary'}
+            variant="contained"
           >
             Details
           </Button>
@@ -162,9 +163,10 @@ const Skills = () => {
             <br />
           </p>
           <Button
-            startIcon={<Check />}
+            startIcon={<MoreHoriz />}
             onClick={() => handleToggleDialog('nodeList')}
             color={'secondary'}
+            variant="contained"
           >
             Details
           </Button>

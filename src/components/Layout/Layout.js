@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cc from 'classnames';
 import { Link as LinkScroll } from 'react-scroll';
@@ -34,11 +34,26 @@ const Layout = ({ children }) => {
   const matchWidth = useMediaQuery('(min-width:650px)');
   const bgIndex = findIndexFromHour(hour);
 
+  const [bgLoad, setBgLoad] = useState(false);
+  const handleBgLoad = () => {
+    setBgLoad(true);
+  };
+
   return (
     <ThemeProvider theme={themeObj}>
       {
-        bgs.map((bg, index) => bg &&
-          <img src={bg} key={bg} className={cc(styles.background, bgIndex !== index && styles.bgHidden)} alt="bg" />)
+        !bgLoad && <div className={cc(styles.background, styles.lazyBg)} />
+      }
+      {
+        bgs.map((bg, index) => bg && (
+          <img
+            onLoad={bgIndex === index && handleBgLoad}
+            src={bg}
+            key={bg}
+            className={cc(styles.background, (!bgLoad || bgIndex !== index) && styles.bgHidden)}
+            alt="bg"
+          />
+        ))
       }
       <div className={cc(styles.layout)}>
         <header className={styles.header}>

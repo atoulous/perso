@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import cc from 'classnames';
 
 import {
+  Box,
   Button,
   Card,
   Dialog,
@@ -14,8 +15,7 @@ import {
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Check, Close, Launch } from '@material-ui/icons';
-
+import { MoreHoriz, Close, Launch } from '@material-ui/icons';
 import styles from './Works.scss';
 
 const sitepersoImg = 'https://d2ypeajg1katov.cloudfront.net/images/siteperso.png';
@@ -41,6 +41,8 @@ const Works = () => {
   const lists = {
     persoList: [
       'ReactJS',
+      'Heroku',
+      'AWS',
     ],
     mrtList: [
       'ReactJS',
@@ -108,14 +110,25 @@ const Works = () => {
     persoList:
   <div>
     <p>Presentation site in ReactJS started with create-react-app</p>
+    <p>Material-Ui default dark theme</p>
+    <p>Catalina backgrounds from current hour, logic made with the Context API</p>
+    <ListItem
+      button
+      className={styles.listItem}
+      component="a"
+      target={'_blank'}
+      href={'https://github.com/atoulous/perso'}
+    >
+      <ListItemIcon><Launch /></ListItemIcon>
+      <ListItemText primary={'see code on github'} />
+    </ListItem>
+    <br />
     <span>I used deps like:</span>
     <List className={styles.contentModalList}>
       <ListItem button className={styles.listItem}><ListItemText primary={'create-react-app ejected'} /></ListItem>
       <ListItem button className={styles.listItem}><ListItemText primary={'material-ui'} /></ListItem>
       <ListItem button className={styles.listItem}><ListItemText primary={'eslint'} /></ListItem>
       <ListItem button className={styles.listItem}><ListItemText primary={'sass'} /></ListItem>
-      <ListItem button className={styles.listItem}><ListItemText primary={'heroku'} /></ListItem>
-      <ListItem button className={styles.listItem}><ListItemText primary={'aws'} /></ListItem>
     </List>
     <span>Currently hosted on Heroku, please apologize HTTP/2 no support</span>
   </div>,
@@ -273,7 +286,7 @@ const Works = () => {
   const matchWidth = useMediaQuery('(min-width:650px)');
 
   return (
-    <div className={cc(styles.works, !matchWidth && styles.worksMobile)} id={'works'}>
+    <Box color={'text.primary'} className={cc(styles.works, !matchWidth && styles.worksMobile)} id={'works'}>
       <h2 className={styles.subTitle}>Works</h2>
 
       <Dialog
@@ -311,8 +324,10 @@ const Works = () => {
           <div className={styles.containContainer}>
             <h4>This personal website</h4>
             <Button
-              startIcon={<Check />}
+              startIcon={<MoreHoriz />}
               onClick={() => handleToggleDialog('persoList')}
+              color={'secondary'}
+              variant="contained"
             >
               About
             </Button>
@@ -324,8 +339,10 @@ const Works = () => {
           <div className={styles.containContainer}>
             <h4>Monsieur TSHIRT SI</h4>
             <Button
-              startIcon={<Check />}
+              startIcon={<MoreHoriz />}
               onClick={() => handleToggleDialog('mrtList')}
+              color={'secondary'}
+              variant="contained"
             >
               About
             </Button>
@@ -337,8 +354,10 @@ const Works = () => {
           <div className={styles.containContainer}>
             <h4>Kapten (Chauffeur Privé)</h4>
             <Button
-              startIcon={<Check />}
+              startIcon={<MoreHoriz />}
               onClick={() => handleToggleDialog('kaptenList')}
+              color={'secondary'}
+              variant="contained"
             >
               About
             </Button>
@@ -350,8 +369,10 @@ const Works = () => {
           <div className={styles.containContainer}>
             <h4>Red Tetris - web</h4>
             <Button
-              startIcon={<Check />}
+              startIcon={<MoreHoriz />}
               onClick={() => handleToggleDialog('redtetrisList')}
+              color={'secondary'}
+              variant="contained"
             >
               About
             </Button>
@@ -363,8 +384,10 @@ const Works = () => {
           <div className={styles.containContainer}>
             <h4>Hypertube - web</h4>
             <Button
-              startIcon={<Check />}
+              startIcon={<MoreHoriz />}
               onClick={() => handleToggleDialog('hypertubeList')}
+              color={'secondary'}
+              variant="contained"
             >
               About
             </Button>
@@ -376,8 +399,10 @@ const Works = () => {
           <div className={styles.containContainer}>
             <h4>Matcha - web</h4>
             <Button
-              startIcon={<Check />}
+              startIcon={<MoreHoriz />}
               onClick={() => handleToggleDialog('matchaList')}
+              color={'secondary'}
+              variant="contained"
             >
               About
             </Button>
@@ -389,8 +414,10 @@ const Works = () => {
           <div className={styles.containContainer}>
             <h4>Ray Traceur - infography</h4>
             <Button
-              startIcon={<Check />}
+              startIcon={<MoreHoriz />}
               onClick={() => handleToggleDialog('rtList')}
+              color={'secondary'}
+              variant="contained"
             >
               About
             </Button>
@@ -402,15 +429,17 @@ const Works = () => {
           <div className={styles.containContainer}>
             <h4>wolf3d - infography</h4>
             <Button
-              startIcon={<Check />}
+              startIcon={<MoreHoriz />}
               onClick={() => handleToggleDialog('wolfList')}
+              color={'secondary'}
+              variant="contained"
             >
               About
             </Button>
           </div>
         </Card>
       </div>
-    </div>
+    </Box>
   );
 };
 
