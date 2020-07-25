@@ -21,9 +21,9 @@ import {
   MoreHoriz, Close,
 } from '@material-ui/icons';
 
-import reactlogo from '../../logos/reactlogo.svg';
-import nodejslogo from '../../logos/nodejslogo.svg';
-import baglogo from '../../logos/bag.svg';
+const reactlogo = 'https://d2ypeajg1katov.cloudfront.net/images/reactlogo.svg';
+const nodejslogo = 'https://d2ypeajg1katov.cloudfront.net/images/nodejslogo.svg';
+const baglogo = 'https://d2ypeajg1katov.cloudfront.net/images/bag.svg';
 
 import styles from './Skills.scss';
 
@@ -109,7 +109,12 @@ const Skills = () => {
           </List>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleToggleDialog} startIcon={<Close />}>
+          <Button
+            onClick={handleToggleDialog}
+            startIcon={<Close />}
+            color={'secondary'}
+            variant="contained"
+          >
             Close
           </Button>
         </DialogActions>

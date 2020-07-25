@@ -28,7 +28,7 @@
   width: 100%;
   max-width: 1080px;
   margin: auto;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
 }
 
@@ -45,8 +45,6 @@
 }
 
 .dialogContent {
-  width: 550px;
-  height: 450px;
 }
 
 .card {

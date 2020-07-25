@@ -25,14 +25,14 @@ const Home = () => {
             </div>
           )
       }
-      <p className={styles.body}>
+      <p className={cc(styles.body, !matchWidth && styles.bodyMobile)}>
         Welcome over here !
         <br />
         I'm a 27 yo french developer from 42 Paris (atoulous).
         <br />
         Started from scratch in 2015 with C and vim.
         <br />
-        I love JavaScript ecosystem and build things with latest features of its languages.
+        I love JavaScript ecosystem and building things with latest features of its languages.
         <br />
         I live both in Paris and Bordeaux. Depends of the weather ;)
       </p>

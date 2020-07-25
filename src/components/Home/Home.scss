@@ -35,13 +35,12 @@
   width: 100%;
   max-width: 1080px;
   margin: auto;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   text-shadow: 1px 1px black;
 }
 
 .homeMobile {
-  padding: 20% 0 0 0;
 }
 
 .title {
@@ -57,6 +56,10 @@
 .body {
   text-align: center;
   font-size: 1.5em !important;
+}
+
+.bodyMobile {
+  font-size: 1em !important;
 }
 
 .avatar {

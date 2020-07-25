@@ -311,7 +311,12 @@ const Works = () => {
           </List>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleToggleDialog} startIcon={<Close />}>
+          <Button
+            onClick={handleToggleDialog}
+            startIcon={<Close />}
+            color={'secondary'}
+            variant="contained"
+          >
             Close
           </Button>
         </DialogActions>

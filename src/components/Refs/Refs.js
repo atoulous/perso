@@ -17,11 +17,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import { MoreHoriz, Close } from '@material-ui/icons';
 
-import logoMRT from '../../logos/mrtlogowhite.png';
-import kaptenlogo from '../../logos/kaptenlogo.svg';
-import mpslogo from '../../logos/mpslogowhite.png';
-
 import styles from './Refs.scss';
+
+const logoMRT = 'https://d2ypeajg1katov.cloudfront.net/images/mrtlogowhite.png';
+const kaptenlogo = 'https://d2ypeajg1katov.cloudfront.net/images/kaptenlogo.svg';
+const mpslogo = 'https://d2ypeajg1katov.cloudfront.net/images/mpslogowhite.png';
 
 const Refs = () => {
   const [dialogSettings, setDialogSettings] = useState({ dialogOpen: false, dialogContent: null });
@@ -103,7 +103,12 @@ const Refs = () => {
           </List>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleToggleDialog} startIcon={<Close />}>
+          <Button
+            onClick={handleToggleDialog}
+            startIcon={<Close />}
+            color={'secondary'}
+            variant="contained"
+          >
             Close
           </Button>
         </DialogActions>
@@ -180,10 +185,10 @@ const Refs = () => {
           <p>
             2013 - 2015 | 2 ans | Lège Cap-Ferret
             <hr />
-            Mécanique/Eléctricité/Stratification/Plomberie/Dépannage/Navigation/Manutention...
+            Mécanique - Eléctricité - Stratification - Plomberie - Dépannage - Navigation - Manutention...
             <br />
             {`Cette expérience très riche m'a permis d'apprendre a travailler avec mes mains, et à acquérir de la
-            débrouillardise qui m'aide encore au quotidien dans mon job de developpeur.`}
+            débrouillardise qui m'aide au quotidien et dans mon job de développeur.`}
             <br />
             Il y a beaucoup de similitudes entre un débogage informatique et une recherche de panne moteur !
           </p>
