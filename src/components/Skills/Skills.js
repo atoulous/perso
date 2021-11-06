@@ -63,6 +63,7 @@ const Skills = () => {
       'Eslint airbnb best practices',
     ],
     othersLangList: [
+      'TypeScript',
       'C',
       'bash/zsh',
       'PHP',
@@ -187,7 +188,7 @@ const Skills = () => {
         </div>
 
         <div className={styles.containContainer}>
-          <p>From beginning to now, i have used many other languages and Framework for various projects like:</p>
+          <p>From beginning to now, i have used many other languages and frameworks for various projects like:</p>
           {
             lists.othersLangList.map((elem) => (
               <Chip label={elem} key={elem} className={styles.chip} />

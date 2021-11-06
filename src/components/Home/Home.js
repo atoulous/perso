@@ -28,13 +28,12 @@ const Home = () => {
       <p className={cc(styles.body, !matchWidth && styles.bodyMobile)}>
         Welcome over here !
         <br />
-        I'm a 27 yo french developer from 42 Paris (atoulous).
+        {'I\'m a 28 yo french developer from school 42, Paris (atoulous).'}
         <br />
-        Started from scratch in 2015 with C and vim.
+        {'Started from scratch in 2015 with C and vim (> emacs btw).'}
         <br />
-        I love JavaScript ecosystem and building things with latest features of its languages.
+        {'I love JavaScript ecosystem and building things with latest features of its languages.'}
         <br />
-        I live both in Paris and Bordeaux. Depends of the weather ;)
       </p>
     </Box>
   );

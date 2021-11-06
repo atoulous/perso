@@ -98,7 +98,7 @@ const Layout = ({ children }) => {
             { children }
           </Container>
           <footer className={styles.footer}>
-            <p>Good to know, I currently work on mac with terminal/vim and my favorite IDE is jetbrains Intellij IDEA.</p>
+            <p>I currently work on mac with term/vim and my favorite IDE is jetbrains Intellij IDEA.</p>
             <LinkScroll to={'home'} smooth>
               <Avatar className={styles.avatar}>
                 <ArrowDropUp className={styles.icon} />
