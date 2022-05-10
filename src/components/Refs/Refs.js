@@ -141,6 +141,8 @@ const Refs = () => {
             <br />
             Assist team lead with clean code and best practices
             <br />
+            Legacy frontend, backend and dual live stacks problematics
+            <br />
             Scrum team
             <br />
             <ListItem
