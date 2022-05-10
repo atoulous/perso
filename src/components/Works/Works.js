@@ -18,6 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { MoreHoriz, Close, Launch } from '@material-ui/icons';
 import styles from './Works.scss';
 
+const careSimpleImg = 'https://d2ypeajg1katov.cloudfront.net/images/careSimpleImg.png';
 const sitepersoImg = 'https://d2ypeajg1katov.cloudfront.net/images/siteperso.png';
 const homemrt = 'https://d2ypeajg1katov.cloudfront.net/images/homemrt.png';
 const hypertube = 'https://d2ypeajg1katov.cloudfront.net/images/hypertube.png';
@@ -39,6 +40,13 @@ const Works = () => {
   };
 
   const lists = {
+    careSimpleList: [
+      'TypeScript',
+      'ReactJS',
+      'Redux',
+      'Hooks',
+      'Bootstrap',
+    ],
     persoList: [
       'ReactJS',
       'Heroku',
@@ -107,6 +115,23 @@ const Works = () => {
   };
 
   const content = {
+    careSimpleList:
+  <div>
+    <p>The Remote Patient Monitoring Company Making Virtual Health Simple</p>
+    <p>1 year job: Frontend migration from old angular to new react portal</p>
+    <List className={styles.contentModalList}>
+      <ListItem
+        button
+        className={styles.listItem}
+        component="a"
+        target={'_blank'}
+        href={'https://www.caresimple.com'}
+      >
+        <ListItemIcon><Launch /></ListItemIcon>
+        <ListItemText primary={'www.caresimple.com'} />
+      </ListItem>
+    </List>
+  </div>,
     persoList:
   <div>
     <p>Presentation site in ReactJS started with create-react-app</p>
@@ -325,9 +350,24 @@ const Works = () => {
       <div className={styles.worksCard} id={'works'}>
 
         <Card className={styles.card}>
+          <img src={careSimpleImg} alt="careSimpleImg" className={styles.img} />
+          <div className={styles.containContainer}>
+            <h4>CareSimple</h4>
+            <Button
+              startIcon={<MoreHoriz />}
+              onClick={() => handleToggleDialog('careSimpleList')}
+              color={'secondary'}
+              variant="contained"
+            >
+              About
+            </Button>
+          </div>
+        </Card>
+
+        <Card className={styles.card}>
           <img src={sitepersoImg} alt="sitepersoImg" className={styles.img} />
           <div className={styles.containContainer}>
-            <h4>This personal website</h4>
+            <h4>Portfolio example</h4>
             <Button
               startIcon={<MoreHoriz />}
               onClick={() => handleToggleDialog('persoList')}

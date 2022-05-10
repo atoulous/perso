@@ -22,6 +22,7 @@ import styles from './Refs.scss';
 const logoMRT = 'https://d2ypeajg1katov.cloudfront.net/images/mrtlogowhite.png';
 const kaptenlogo = 'https://d2ypeajg1katov.cloudfront.net/images/kaptenlogo.svg';
 const mpslogo = 'https://d2ypeajg1katov.cloudfront.net/images/mpslogowhite.png';
+const logoCS = 'https://d2ypeajg1katov.cloudfront.net/images/CSlogo.svg';
 
 const Refs = () => {
   const [dialogSettings, setDialogSettings] = useState({ dialogOpen: false, dialogContent: null });
@@ -32,6 +33,13 @@ const Refs = () => {
   };
 
   const lists = {
+    careSimpleList: [
+      'TypeScript',
+      'ReactJS',
+      'Redux',
+      'Hooks',
+      'Bootstrap',
+    ],
     mrtList: [
       'ReactJS',
       'NodeJS',
@@ -113,6 +121,50 @@ const Refs = () => {
           </Button>
         </DialogActions>
       </Dialog>
+
+      <Card className={styles.card}>
+        <div className={styles.logoContainer}>
+          <a href={'https://caresimple.com'} target={'_blank'} rel="noreferrer" className={styles.link}>
+            <img src={logoCS} className={matchWidth ? styles.logo : styles.logoMini} alt="logoCS" />
+          </a>
+        </div>
+
+        <div className={styles.containContainer}>
+          <h4>Frontend Developer Javascript - Software Engineer</h4>
+          <p>
+            May 2021 - May 2022 | 1 year | Montréal
+            <br />
+            <hr />
+            The Remote Patient Monitoring Company Making Virtual Health Simple
+            <br />
+            Migration old AngularJS to new ReactJS portal used by clinician
+            <br />
+            Assist team lead with clean code and best practices
+            <br />
+            Scrum team
+            <br />
+            <ListItem
+              button
+              className={styles.listItem}
+              component="a"
+              target={'_blank'}
+              href={'https://caresimple.com'}
+            >
+              <ListItemIcon><Launch /></ListItemIcon>
+              <ListItemText primary={'www.caresimple.com'} />
+            </ListItem>
+          </p>
+
+          <Button
+            startIcon={<MoreHoriz />}
+            onClick={() => handleToggleDialog('careSimpleList')}
+            color={'secondary'}
+            variant="contained"
+          >
+            More about job
+          </Button>
+        </div>
+      </Card>
 
       <Card className={styles.card}>
         <div className={styles.logoContainer}>
