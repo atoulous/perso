@@ -32,7 +32,9 @@ const Home = () => {
         <br />
         {'Started from scratch in 2015 with C and vim (> emacs btw).'}
         <br />
-        {'I love JavaScript ecosystem and building things with latest features of its languages.'}
+        {'I love JavaScript ecosystem and building useful things with latest features and frameworks.'}
+        <br />
+        {'I like to use my skills for positive impact projects.'}
         <br />
       </p>
     </Box>
